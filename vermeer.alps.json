@@ -1,0 +1,227 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "title": "フェルメール作品一覧",
+    "doc": {
+      "value": "フェルメールの現存作品を、作品番号、図版、作品名、制作年、所蔵先、来日履歴で閲覧し、作品記事とフルサイズ図版へ遷移するための静的一覧。"
+    },
+    "descriptor": [
+      {
+        "id": "pageTitle",
+        "title": "ページタイトル",
+        "doc": {
+          "value": "一覧ページの見出し。"
+        },
+        "def": "https://schema.org/name"
+      },
+      {
+        "id": "artworkNumber",
+        "title": "作品番号",
+        "doc": {
+          "value": "一覧内で作品を識別する番号。"
+        },
+        "def": "https://schema.org/position"
+      },
+      {
+        "id": "artworkImage",
+        "title": "図版",
+        "doc": {
+          "value": "作品を表す画像。クリックするとフルサイズ画像へ遷移する。"
+        },
+        "def": "https://schema.org/image"
+      },
+      {
+        "id": "artworkName",
+        "title": "作品名",
+        "doc": {
+          "value": "作品の日本語名称。クリックすると作品記事へ遷移する。"
+        },
+        "def": "https://schema.org/name"
+      },
+      {
+        "id": "creationYear",
+        "title": "制作年",
+        "doc": {
+          "value": "作品が制作された年または推定年代。"
+        },
+        "def": "https://schema.org/dateCreated"
+      },
+      {
+        "id": "holdingCollection",
+        "title": "所蔵先",
+        "doc": {
+          "value": "現在作品を所蔵する美術館、コレクション、または所有者。"
+        },
+        "def": "https://schema.org/locationCreated"
+      },
+      {
+        "id": "japanExhibitionHistory",
+        "title": "来日履歴",
+        "doc": {
+          "value": "日本で展示された年と会場。来日していない場合はその旨を示す。"
+        }
+      },
+      {
+        "id": "sourceArticle",
+        "title": "出典ページ",
+        "doc": {
+          "value": "作品記事リンクと図版リンクの参照元となるWikipediaページ。"
+        },
+        "def": "https://schema.org/citation"
+      },
+      {
+        "id": "ArtworkRecord",
+        "title": "作品レコード",
+        "doc": {
+          "value": "フェルメール作品1点を表す行。"
+        },
+        "descriptor": [
+          {
+            "href": "#artworkNumber"
+          },
+          {
+            "href": "#artworkImage"
+          },
+          {
+            "href": "#artworkName"
+          },
+          {
+            "href": "#creationYear"
+          },
+          {
+            "href": "#holdingCollection"
+          },
+          {
+            "href": "#japanExhibitionHistory"
+          },
+          {
+            "href": "#goArtworkArticle"
+          },
+          {
+            "href": "#goFullSizeImage"
+          },
+          {
+            "href": "#visitHistorySource"
+          }
+        ]
+      },
+      {
+        "id": "VermeerWorksPage",
+        "title": "フェルメール作品一覧ページ",
+        "doc": {
+          "value": "作品レコードを表形式で閲覧する状態。"
+        },
+        "descriptor": [
+          {
+            "href": "#pageTitle"
+          },
+          {
+            "href": "#ArtworkRecord"
+          },
+          {
+            "href": "#sourceArticle"
+          },
+          {
+            "href": "#goVermeerWorksPage"
+          },
+          {
+            "href": "#visitHistorySource"
+          },
+          {
+            "href": "#goVisitHistorySources"
+          }
+        ]
+      },
+      {
+        "id": "ArtworkArticle",
+        "title": "作品記事",
+        "doc": {
+          "value": "作品名から遷移するWikipedia作品記事。"
+        },
+        "descriptor": [
+          {
+            "href": "#artworkName"
+          }
+        ]
+      },
+      {
+        "id": "FullSizeImage",
+        "title": "フルサイズ図版",
+        "doc": {
+          "value": "図版から遷移するWikimedia Commonsの元画像。"
+        },
+        "descriptor": [
+          {
+            "href": "#artworkImage"
+          }
+        ]
+      },
+      {
+        "id": "goVermeerWorksPage",
+        "type": "safe",
+        "rt": "#VermeerWorksPage",
+        "title": "フェルメール作品一覧を見る",
+        "doc": {
+          "value": "フェルメール作品一覧ページを表示する。"
+        }
+      },
+      {
+        "id": "goArtworkArticle",
+        "type": "safe",
+        "rt": "#ArtworkArticle",
+        "title": "作品記事を見る",
+        "doc": {
+          "value": "作品名のリンクから対応するWikipedia作品記事へ移動する。"
+        },
+        "descriptor": [
+          {
+            "href": "#artworkName"
+          }
+        ]
+      },
+      {
+        "id": "goFullSizeImage",
+        "type": "safe",
+        "rt": "#FullSizeImage",
+        "title": "フルサイズ図版を見る",
+        "doc": {
+          "value": "図版のリンクからWikimedia Commonsの元画像へ移動する。"
+        },
+        "descriptor": [
+          {
+            "href": "#artworkImage"
+          }
+        ]
+      },
+      {
+        "id": "visitHistorySource",
+        "title": "来日履歴の出典",
+        "doc": {
+          "value": "来日履歴を確認するための出典ページまたは出典リンク。"
+        },
+        "def": "https://schema.org/citation"
+      },
+      {
+        "id": "VisitHistorySources",
+        "title": "来日履歴出典一覧",
+        "doc": {
+          "value": "来日履歴の証拠URLを展覧会単位でまとめたページ。"
+        },
+        "descriptor": [
+          {
+            "href": "#visitHistorySource"
+          }
+        ]
+      },
+      {
+        "id": "goVisitHistorySources",
+        "type": "safe",
+        "rt": "#VisitHistorySources",
+        "title": "来日履歴の出典を見る",
+        "doc": {
+          "value": "来日履歴の出典一覧ページへ移動する。"
+        }
+      }
+    ]
+  }
+}
