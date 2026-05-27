@@ -27,6 +27,64 @@
     img { display: block; max-width: 240px; height: auto; }
     .source-ref { font-size: 0.85em; margin-left: 0.15em; }
     footer { margin-top: 1em; font-size: 0.9em; }
+    a { word-break: break-word; }
+
+    @media (max-width: 768px) {
+      body { margin: 1em 0.8em; line-height: 1.5; }
+      h1 { font-size: 1.4em; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      thead { display: none; }
+      table { border: none; font-size: 0.95em; }
+      tr.ArtworkRecord {
+        border: 1px solid #a2a9b1;
+        border-radius: 4px;
+        margin-bottom: 1em;
+        padding: 0.6em 0.8em;
+        background: #fff;
+      }
+      td {
+        border: none;
+        padding: 0.2em 0;
+        text-align: left;
+        white-space: normal;
+      }
+      td:first-child, th:first-child { text-align: left; white-space: normal; }
+      td.artworkNumber {
+        font-size: 0.85em;
+        color: #54595d;
+      }
+      td.artworkNumber::before { content: "No. "; }
+      td.artworkImage { text-align: center; padding: 0.4em 0; }
+      td.artworkImage img {
+        margin: 0 auto;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        max-height: 300px;
+      }
+      td.artworkName {
+        font-size: 1.15em;
+        font-weight: bold;
+        padding: 0.3em 0;
+      }
+      td.creationYear::before,
+      td.holdingCollection::before {
+        content: attr(data-label) "";
+        color: #54595d;
+        font-weight: bold;
+        margin-right: 0.3em;
+      }
+      td.creationYear::before { content: "制作年: "; }
+      td.holdingCollection::before { content: "所蔵先: "; }
+      td.japanExhibitionHistory { padding-top: 0.5em; }
+      td.japanExhibitionHistory::before {
+        content: "来日履歴";
+        display: block;
+        color: #54595d;
+        font-weight: bold;
+        margin-bottom: 0.2em;
+      }
+    }
   </style>
 </head>
 <body>
