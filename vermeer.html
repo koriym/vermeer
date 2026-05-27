@@ -27,7 +27,7 @@
     img { display: block; max-width: 240px; height: auto; }
     .source-ref { font-size: 0.85em; margin-left: 0.15em; }
     footer { margin-top: 1em; font-size: 0.9em; }
-    a { word-break: break-word; }
+    a { overflow-wrap: break-word; }
 
     @media (max-width: 768px) {
       body { margin: 1em 0.8em; line-height: 1.5; }
@@ -69,7 +69,6 @@
       }
       td.creationYear::before,
       td.holdingCollection::before {
-        content: attr(data-label) "";
         color: #54595d;
         font-weight: bold;
         margin-right: 0.3em;
