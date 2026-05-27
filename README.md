@@ -2,6 +2,11 @@
 
 フェルメール作品一覧を、画像・作品ページリンク・来日履歴・出典リンク付きでまとめた静的HTMLページです。
 
+## 公開URL
+
+- https://koriym.github.io/vermeer/
+- https://github.com/koriym/vermeer
+
 ## ファイル
 
 - `vermeer.html` — メインページ。作品一覧、画像、作品ページリンク、来日履歴を掲載。
