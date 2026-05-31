@@ -51,8 +51,7 @@
         "title": "所蔵先",
         "doc": {
           "value": "現在作品を所蔵する美術館、コレクション、または所有者。"
-        },
-        "def": "https://schema.org/locationCreated"
+        }
       },
       {
         "id": "japanExhibitionHistory",
